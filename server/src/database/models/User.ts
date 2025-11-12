@@ -74,7 +74,7 @@ export async function createPasswordReset(email: string): Promise<string> {
 	const expires = new Date(Date.now() + 60 * 60 * 1000);
 
 	await pool.query<RowDataPacket[]>(
-		"UPDATE users SET reset_token = ?, reset_expires = ?, WHERE email = ?",
+		"UPDATE users SET reset_token = ?, reset_expires = ? WHERE email = ?",
 		[token, expires, email]
 	);
 
@@ -92,11 +92,13 @@ export async function completePasswordReset(
 		[token]
 	);
 
-	if (users.length > 0) return false;
+	console.log(users);
+
+	if (users.length < 0) return false;
 
 	const userId = users[0].id;
 
-	const hashedPassword = bcrypt.hash(newPassword, 10);
+	const hashedPassword = await bcrypt.hash(newPassword, 10);
 
 	await pool.query<RowDataPacket[]>(
 		"UPDATE users SET password_hash = ?, reset_token = NULL, reset_expires = NULL WHERE id = ?",
