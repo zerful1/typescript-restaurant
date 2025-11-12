@@ -2,7 +2,6 @@ import bcrypt from "bcrypt";
 import crypto from "crypto";
 import type { RowDataPacket, ResultSetHeader } from "mysql2/promise";
 import { getPool } from "../connection.js";
-import { resourceLimits } from "worker_threads";
 
 export interface UserData {
 	id: number;

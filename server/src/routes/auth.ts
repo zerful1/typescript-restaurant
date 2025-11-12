@@ -1,9 +1,4 @@
-import {
-	Router,
-	type NextFunction,
-	type Request,
-	type Response,
-} from "express";
+import { Router } from "express";
 import { User } from "../database";
 import { getUserId } from "../database/models/User";
 
