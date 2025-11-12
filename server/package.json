@@ -1,29 +1,33 @@
 {
-  "name": "server",
-  "version": "1.0.0",
-  "description": "Restaurant booking backend",
-  "type": "module",
-  "main": "dist/index.js",
-  "scripts": {
-    "dev": "tsx-watch --onSuccess \"node dist/index.js\"",
-    "build": "tsc",
-    "start": "node dist/index.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "bcrypt": "^6.0.0",
-    "chalk": "^5.6.2",
-    "express": "^5.1.0",
-    "express-session": "^1.18.2",
-    "mysql2": "^3.15.3"
-  },
-  "devDependencies": {
-    "@types/bcrypt": "^6.0.0",
-    "@types/express": "^5.0.5",
-    "@types/express-session": "^1.18.2",
-    "tsc-watch": "^7.2.0",
-    "typescript": "^5.9.3"
-  }
+	"name": "server",
+	"version": "1.0.0",
+	"description": "Restaurant booking backend",
+	"type": "module",
+	"main": "dist/index.js",
+	"scripts": {
+		"devold": "tsc-watch --onSuccess \"node dist/index.js\"",
+		"build": "tsc",
+		"start": "node dist/index.js",
+		"dev": "tsx src/index.ts",
+		"watch": "tsx watch src/index.ts"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"bcrypt": "^6.0.0",
+		"chalk": "^5.6.2",
+		"express": "^5.1.0",
+		"express-session": "^1.18.2",
+		"mysql2": "^3.15.3",
+		"stripe": "^19.3.0",
+		"tsx": "^4.20.6"
+	},
+	"devDependencies": {
+		"@types/bcrypt": "^6.0.0",
+		"@types/express": "^5.0.5",
+		"@types/express-session": "^1.18.2",
+		"tsc-watch": "^7.2.0",
+		"typescript": "^5.9.3"
+	}
 }
