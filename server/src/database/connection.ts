@@ -1,7 +1,7 @@
 import mysql from "mysql2/promise";
 import chalk from "chalk";
 
-export const DATABASE_NAME = "restaurant_db";
+export const DATABASE_NAME = "restaurant_db2";
 
 let pool: mysql.Pool | null = null;
 
